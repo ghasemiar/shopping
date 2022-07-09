@@ -40,7 +40,7 @@ export default function Cart() {
               <TableCell>{row.category}</TableCell>
               <TableCell>{row.qty}</TableCell>
               <TableCell><CartQtyButtons item={row}/></TableCell>
-              <TableCell>{row.qty*row.price}</TableCell>
+              <TableCell>{Math.floor(row.qty*row.price)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
