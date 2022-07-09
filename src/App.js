@@ -19,7 +19,7 @@ function App() {
       <ToggleColorMode>
         <Paper>
         <Header />
-
+        <Paper sx ={{mb:10}}>
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />
@@ -27,7 +27,7 @@ function App() {
           <Route path="/:userId" element={<Product />} />
           <Route path="/cart-ico" element={<Cart />} />
         </Routes>
-
+        </Paper>
         <Footer />
         </Paper>
       </ToggleColorMode>
