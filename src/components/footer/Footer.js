@@ -8,6 +8,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import IconButton from "@mui/material/IconButton";
+//set footer absolutly
 const socialIcons = [
   { id: 1, icon: <FacebookIcon /> },
   { id: 2, icon: <InstagramIcon /> },
