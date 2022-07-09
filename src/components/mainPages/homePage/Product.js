@@ -23,13 +23,15 @@ function Product() {
   };
   const Loading = () => {
     return (
-      <Box sx={{ width: "100%", mt: 10 }}>
+      <Box sx={{ width: "100%", mt: "120px" }}>
         <LinearProgress color="success" />
       </Box>
     );
   };
+  
   const AddItem = useAddItem();
   const ShowDetail = () => {
+    data.qty = 1;
     return (
       <Paper key={data.id} sx={{ mt: 15, ml: 5, mr: 5 }}>
         <Grid container spacing={2}>
@@ -52,9 +54,10 @@ function Product() {
               <Typography variant="p" component="p" sx={{ m: 3 }}>
                 <strong>Price:</strong> {data.price}
               </Typography>
+              
             </Box>
             <Box sx={{ m: 3 }}>
-              <Button variant="outlined" color="inherit" onClick={()=>AddItem(data)}>
+              <Button variant="outlined" color="inherit" onClick={()=>{AddItem(data)}}>
                 Add To Cart
               </Button>
             </Box>

@@ -8,8 +8,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useRecoilValue } from "recoil";
 import {cart} from "./../../store/atoms"
+import CartQtyButtons from "./CartQtyButtons"
 export default function Cart() {
-    const cartItem = useRecoilValue(cart)
+    const cartItem = useRecoilValue(cart);
+
   return (
     <TableContainer component={Paper} sx={{mt:10}} >
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -19,7 +21,9 @@ export default function Cart() {
             <TableCell><b>Price</b></TableCell>
             <TableCell><b>Rating</b></TableCell>
             <TableCell><b>Category</b></TableCell>
-            <TableCell><b>Count</b></TableCell>
+            <TableCell><b>Qty</b></TableCell>
+            <TableCell><b>Change Qty</b></TableCell>
+            <TableCell><b>Total Price</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -34,7 +38,9 @@ export default function Cart() {
               <TableCell>{row.price}</TableCell>
               <TableCell>{row.rating.rate}</TableCell>
               <TableCell>{row.category}</TableCell>
-              <TableCell>{row.rating.count}</TableCell>
+              <TableCell>{row.qty}</TableCell>
+              <TableCell><CartQtyButtons item={row}/></TableCell>
+              <TableCell>{row.qty*row.price}</TableCell>
             </TableRow>
           ))}
         </TableBody>
